@@ -12,12 +12,8 @@ node{
     stage('Deploy'){
         bat 'cd target'
         bat "copy target/demo-0.0.1-SNAPSHOT.war E:\\softwares\\apache-tomcat-9.0.33-windows-x64\\apache-tomcat-9.0.33\\webapps"
-       
+       emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider']], subject: 'Test'
     }
-     post {
-        always {
-            emailText body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider']], subject: 'Test'
-        }
-    }
+   
 
 }

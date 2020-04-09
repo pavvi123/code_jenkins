@@ -1,0 +1,18 @@
+node{
+   stage("checkout") {
+                git credentialsId: 'praveen', url: 'https://github.com/pavvi123/code_jenkins.git'
+             
+        }
+        
+    stage('mvn clean build'){
+           bat label: '', script: 'mvn clean package'
+    }
+    
+    
+    stage('Deploy'){
+        bat 'cd target'
+        bat "copy target/demo-0.0.1-SNAPSHOT.war E:\\softwares\\apache-tomcat-9.0.33-windows-x64\\apache-tomcat-9.0.33\\webapps"
+       
+    }
+
+}

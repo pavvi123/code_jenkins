@@ -18,7 +18,7 @@ public class HelloController {
 	@RequestMapping("/hello")
 	public String getName(){
 		save();
-		return "Welcome every to jenkinsss";
+		return "Welcome every  to jenkinsss";
 		
 	}
 	

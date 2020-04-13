@@ -1,10 +1,10 @@
 node{
-   stage("checkout") {
-                git credentialsId: 'praveen', url: 'https://github.com/pavvi123/code_jenkins.git'
+   stage("Git Checkout") {
+          git credentialsId: 'praveen', url: 'https://github.com/pavvi123/code_jenkins.git'
              
         }
         
-    stage('mvn clean build'){
+    stage('Mevan Clean Build'){
            bat label: '', script: 'mvn clean package'
     }
     
